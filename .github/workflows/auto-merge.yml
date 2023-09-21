@@ -3,7 +3,7 @@ name: Auto Merge to Production and Deploy
 on:
   schedule:
     # This runs at 12pm every second Thursday
-    - cron: '* * * * *'
+    - cron: '*/5 * * * *'
 
 jobs:
   merge_and_deploy:
