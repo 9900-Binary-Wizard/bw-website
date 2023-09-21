@@ -14,6 +14,8 @@ jobs:
     - name: Automatic Merge
       run: |
         git fetch --all
+        git config user.name github-actions
+        git config user.email github-actions@github.com
         git checkout production
         git merge main
         git push origin production
