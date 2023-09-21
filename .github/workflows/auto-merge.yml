@@ -2,7 +2,6 @@ name: Auto Merge to Production and Deploy
 
 on:
   schedule:
-    # This runs at 12pm every second Thursday
     - cron: '*/5 * * * *'
 
 jobs:
@@ -14,6 +13,6 @@ jobs:
 
     - name: Automatic Merge
       run: |
-        git checkout origin/production
+        git checkout production
         git merge main
         git push origin production
