@@ -14,6 +14,6 @@ jobs:
 
     - name: Automatic Merge
       run: |
-        git checkout production
+        git checkout origin/production
         git merge main
         git push origin production
