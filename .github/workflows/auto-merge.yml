@@ -17,6 +17,7 @@ jobs:
       run: |
         git config user.name "github-actions"
         git config user.email "github-actions@github.com"
+        git fetch --all
         git branch
         git checkout -b production
         git merge main
