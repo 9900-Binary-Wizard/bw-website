@@ -9,10 +9,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout Repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     - name: Automatic Merge
       run: |
+        git config user.name github-actions
+        git config user.email github-actions@github.com
         git checkout production
         git merge main
         git push origin production
