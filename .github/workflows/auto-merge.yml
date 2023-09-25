@@ -14,8 +14,9 @@ jobs:
           token: ${{ secrets.GIT_ACCESS_TOKEN }}
 
     - name: Automatic Merge
-      uses: bambamboole/gha-upmerge@master
+      uses: bambamboole/gha-upmerge@v1.0.1
       with:
-        stable_branch: 'main'
-        development_branch: 'production'
+        from_branch: 'main'
+        to_branch: 'production'
+        user_name: GitHub Upmerge Action
         
