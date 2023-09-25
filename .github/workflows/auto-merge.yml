@@ -10,8 +10,6 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-      with:
-          token: ${{ secrets.GIT_ACCESS_TOKEN }}
 
     - name: Automatic Merge
       uses: bambamboole/gha-upmerge@v1.0.1
@@ -19,4 +17,6 @@ jobs:
         from_branch: 'main'
         to_branch: 'production'
         user_name: GitHub Upmerge Action
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
