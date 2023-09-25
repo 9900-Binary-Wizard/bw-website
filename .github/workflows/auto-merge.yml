@@ -5,19 +5,17 @@ on:
 
 jobs:
   merge_and_deploy:
-  
     runs-on: ubuntu-latest
-    
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v3
 
-    - name: Automatic Merge
-      uses: robotology/gh-action-nightly-merge@v1.4.0
-      with:
-        stable_branch: 'main'
-        development_branch: 'production'
-        allow_ff: false
-      env:
-        GITHUB_TOKEN: ${{ secrets.GIT_ACCESS_TOKEN }}
-        
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Automatic Merge
+        uses: robotology/gh-action-nightly-merge@v1.4.0
+        with:
+          stable_branch: "main"
+          development_branch: "production"
+          allow_ff: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GIT_ACCESS_TOKEN }}
