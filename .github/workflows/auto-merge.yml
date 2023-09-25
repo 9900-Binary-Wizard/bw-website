@@ -1,22 +1,23 @@
 name: Auto Merge to Production and Deploy
 
 on:
-  schedule:
-    - cron: '*/5 * * * *'
+  workflow_dispatch:
 
 jobs:
   merge_and_deploy:
+  
     runs-on: ubuntu-latest
+    
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Automatic Merge
-      uses: bambamboole/gha-upmerge@v1.0.1
+      uses: robotology/gh-action-nightly-merge@v1.4.0
       with:
-        from_branch: 'main'
-        to_branch: 'production'
-        user_name: GitHub Upmerge Action
+        stable_branch: 'main'
+        development_branch: 'production'
+        allow_ff: false
       env:
         GITHUB_TOKEN: ${{ secrets.GIT_ACCESS_TOKEN }}
         
