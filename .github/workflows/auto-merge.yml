@@ -9,6 +9,10 @@ jobs:
 
     steps:
       - name: Checkout
+        # It is very important to use V1 because the other version's checkout only fetches the last commit by default.
+        # So you don't have enough past commits to find a common ancestor if you are not using V1.
+        # It will meet an error with fatal: refusing to merge unrelated histories.
+        # Or there is another way using: "with: fetch-depth: x" to set more fetch-depth
         uses: actions/checkout@v1
 
       - name: Automatic Merge
