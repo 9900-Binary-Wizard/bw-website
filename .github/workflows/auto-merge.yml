@@ -9,7 +9,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v1
 
       - name: Automatic Merge
         uses: robotology/gh-action-nightly-merge@v1.4.0
